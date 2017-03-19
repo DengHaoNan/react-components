@@ -1,13 +1,21 @@
 @import "../../styles/tc-styles";
 
 .SideBarFilters {
-  float: right;
   font: 400 13px/30px Roboto;
   width: 360px;
+  @include xs{
+    width: 100%;
+    margin-bottom: 10px;
+  }
 
   .FilterBox {
     background: $tc-white;
     padding: 2*$base-unit;
+    border-radius: 4px;
+
+    .down-arrow{
+      display: none;
+    }
 
     h1 {
       border: none;
@@ -47,5 +55,43 @@
     color: $tc-gray-70;
     line-height: 30px;
     margin: 10px;
+  }
+
+  @include xs{
+    .FilterItem{
+      margin: 0;
+      padding: 0 10px 0 0;
+      clear: both;
+    }
+    .FilterBox{
+      padding: 5px 10px;
+    }
+    .FilterBox h1{
+      margin: 0;
+      float: left;
+    }
+    &.folded hr{
+      display: none;
+    }
+    &.folded  hr,
+    &.folded  h1,
+    &.folded  button{
+      display: none;
+    }
+    &.folded .FilterItem{
+      display: none;
+    } 
+    &.folded .FilterItem.highlighted{
+        display: inline-block;
+        width: calc(100% - 14px);
+        background-color: white;
+        cursor: pointer;
+    }
+    &.folded .down-arrow{
+      display: inline;
+    }
+    .rss-link{
+      display: none;
+    }
   }
 }

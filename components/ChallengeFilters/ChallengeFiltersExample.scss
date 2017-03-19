@@ -10,11 +10,13 @@ $challenge-radius-4: $corner-radius * 2;
 
 .challengeCardContainer{
   width: calc(100% - 370px);
+  @include xs {
+    width: 100%;
+  }
 }
 
 .challenge-cards-container {
-  padding: $base-unit * 2;
-  width: 70%;
+  width: calc(100% - 370px);
   .title {
     font-size: 13px;
     color: $tc-gray-80;
@@ -26,6 +28,9 @@ $challenge-radius-4: $corner-radius * 2;
     border-top-left-radius: $challenge-radius-4;
     border-top-right-radius: $challenge-radius-4;
   }
+  @include xs {
+    width: 100%;
+  }
 }
 
 .tc-content-wrapper {
@@ -33,7 +38,7 @@ $challenge-radius-4: $corner-radius * 2;
   padding: $challenge-space-20;
   @include xs {
     display: block;
-    padding: $base-unit * 0;
+    padding: $challenge-space-10;
   }
   &.srm {
     @include sm {
@@ -42,13 +47,7 @@ $challenge-radius-4: $corner-radius * 2;
     }
   }
 }
-.challenge-cards-container {
-  width: 70%;
-  padding: $challenge-space-10;
-  @include xs {
-    width: 100%;
-  }
-}
+
 .challenges-container.SRMs-container {
   width: 70%;
   padding: 10px;
@@ -72,6 +71,7 @@ $challenge-radius-4: $corner-radius * 2;
   margin-left: 20px;
   width: 360px;
   padding: 0;
+  order: 1;
   &.active {
     position: relative;
     .sticky-inner-wrapper{
@@ -80,10 +80,20 @@ $challenge-radius-4: $corner-radius * 2;
   }
   @include xs {
     width: 100%;
+    margin-left: 0;
   }
   &.srm {
     @include xs-to-sm {
       width: 100%;
+    }
+  }
+  @include xs {
+    width: 100%;
+    .sticky-inner-wrapper{
+      position: relative !important;
+      top: 0 !important;
+      right: 0 !important;
+      width: 100% !important;
     }
   }
 }

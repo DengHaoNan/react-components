@@ -94,6 +94,7 @@ class SideBarFilters extends React.Component {
       currentFilter: DEFAULT_FILTERS[3],
       filters: _.clone(DEFAULT_FILTERS).concat(myFilters),
       mode: MODES.SELECT_FILTER,
+      folded: true
     };
 
     for (let i = 0; i < this.state.filters.length; i += 1) {
@@ -190,11 +191,21 @@ class SideBarFilters extends React.Component {
   }
 
   /**
+   * Change the folded state of the whole component.
+   */
+  toggleFoldedState(){
+    console.log('change folded state');
+    this.setState((prevState) => ({folded: !prevState.folded}));
+  }
+
+  /**
    * Renders the component in the Edit My Filters mode.
    */
   editMyFiltersMode() {
+    let className = "SideBarFilters ";
+    if (this.state.folded) className += 'folded';
     return (
-      <div className="SideBarFilters" ref={ref => this.props.ref(ref)}>
+      <div className={className} onClick={() => {this.toggleFoldedState()}} ref={ref => this.props.ref(ref)}>
         <div className="FilterBox">
           <EditMyFilters
             filters={this.state.filters.slice(FILTER_ID.FIRST_USER_DEFINED)}
@@ -251,8 +262,10 @@ class SideBarFilters extends React.Component {
       />
     ));
     const myFilters = filters.slice(FILTER_ID.FIRST_USER_DEFINED);
+    let className = "SideBarFilters ";
+    if (this.state.folded) className += 'folded';
     return (
-      <div className="SideBarFilters" ref={ref => this.props.ref(ref)}>
+      <div className={className} onClick={() => {this.toggleFoldedState()}} ref={ref => this.props.ref(ref)}>
         <div className="FilterBox">
           {filters[FILTER_ID.ALL_CHALLENGES]}
 
@@ -264,7 +277,7 @@ class SideBarFilters extends React.Component {
           {filters[FILTER_ID.OPEN_FOR_REVIEW]}
           {
             myFilters.length ?
-              <span>
+              <span className='editFilterTitle'>
                 <hr />
                 <h1>My filters</h1>
                 <button
@@ -278,7 +291,9 @@ class SideBarFilters extends React.Component {
                 {myFilters}
               </span> : ''
           }
+          <img className="down-arrow" src={require('./down-arrow.svg')}/>
         </div>
+
         <a className="rss-link" href={RSS_LINK} target="_blank">Get the RSS feed</a>
       </div>
     );

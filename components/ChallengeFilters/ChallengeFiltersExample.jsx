@@ -428,7 +428,7 @@ class ChallengeFiltersExample extends React.Component {
         </div>
 
         <div className={`tc-content-wrapper ${this.state.currentCardType === 'Challenges' ? '' : 'hidden'}`}>
-          {challengeCardContainer}
+          
 
           <Sticky
             className="sidebar-container"
@@ -446,6 +446,7 @@ class ChallengeFiltersExample extends React.Component {
               myChallenges={this.props.myChallenges}
             />
           </Sticky>
+          {challengeCardContainer}
         </div>
       </div>
     );

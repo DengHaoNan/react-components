@@ -30,18 +30,7 @@ $challenge-radius-4: $corner-radius * 2;
     width: 100%;
   }
 }
-.sidebar-container {
-  width: 30%;
-  padding: $challenge-space-10;
-  @include xs {
-    width: 100%;
-  }
-  &.srm {
-    @include xs-to-sm {
-      width: 100%;
-    }
-  }
-}
+
 .ChallengeCardExamples {
   background: $tc-gray-neutral-light;
   border-top-left-radius: $challenge-radius-4;

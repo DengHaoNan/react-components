@@ -8,6 +8,10 @@ $challenge-radius-4: $corner-radius * 2;
   background: $tc-gray-neutral-dark;
 }
 
+.challengeCardContainer{
+  width: calc(100% - 370px);
+}
+
 .challenge-cards-container {
   padding: $base-unit * 2;
   width: 70%;
@@ -26,7 +30,7 @@ $challenge-radius-4: $corner-radius * 2;
 
 .tc-content-wrapper {
   display: flex;
-  padding: $challenge-space-10;
+  padding: $challenge-space-20;
   @include xs {
     display: block;
     padding: $base-unit * 0;
@@ -52,24 +56,27 @@ $challenge-radius-4: $corner-radius * 2;
     width: 100%;
   }
   .title {
-      font-size: 13px;
-      color: #47474F;
-      line-height: 20px;
-      padding: 10px 20px;
-      font-family: 'Roboto';
-      font-weight: 500;
-      background: #FAFAFB;
-      border-top-left-radius: 4px;
-      border-top-right-radius: 4px;
-      margin-top: 20px;
+    font-size: 13px;
+    color: #47474F;
+    line-height: 20px;
+    padding: 10px 20px;
+    font-family: 'Roboto';
+    font-weight: 500;
+    background: #FAFAFB;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    margin-top: 20px;
   }
 }
 .sidebar-container {
-  width: 30%;
-  padding: $challenge-space-10;
+  margin-left: 20px;
+  width: 360px;
+  padding: 0;
   &.active {
     position: relative;
-    right: 20px;
+    .sticky-inner-wrapper{
+      right: 20px;
+    }
   }
   @include xs {
     width: 100%;
@@ -82,5 +89,5 @@ $challenge-radius-4: $corner-radius * 2;
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }

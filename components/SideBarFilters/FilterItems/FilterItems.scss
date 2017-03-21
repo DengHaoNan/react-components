@@ -9,7 +9,7 @@
     margin: 0 -2*$base-unit;
     padding: 0 3*$base-unit 0 5*$base-unit;
     position: relative;
-    input {
+    input:not([type="checkbox"]) {
       background: transparent;
       border: none;
       box-shadow: none;

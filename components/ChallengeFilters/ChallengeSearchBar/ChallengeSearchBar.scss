@@ -37,9 +37,8 @@ $search-input-width: '100% - 56px';
   }
   @include placeholder {
     font-weight: 300;
-    font-size: 15px;
+    font-size: 15px !important;
     color: $tc-gray-50;
-    line-height: $challenge-space-30 + 5;
     text-transform: capitalize;
     opacity: 1;
   }

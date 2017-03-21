@@ -42,6 +42,7 @@ $down-arrow-size: $base-unit * 2;
   }
 
   .view-options-toggle-container-label {
+    font-family: Roboto;
     font-size: 12px;
     font-weight: 300;
     color: $tc-gray-70;
@@ -84,6 +85,7 @@ $down-arrow-size: $base-unit * 2;
     color: $tc-gray-50;
     border: 1px solid $tc-gray-neutral-dark;
     border-radius: 144px;
+    font-family: Roboto;
     font-size: 12px;
     font-weight: 400;
     color: #394146;

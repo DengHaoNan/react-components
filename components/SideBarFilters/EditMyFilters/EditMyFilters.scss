@@ -16,7 +16,7 @@
       font-size: 13px;
     }
     #done-button {
-      background: $tc-dark-blue;
+      background: $tc-dark-blue-90;
       border-radius: 2*$corner-radius;
       color: $tc-white;
       cursor: pointer;
@@ -31,6 +31,7 @@
       padding: 5*$base-unit;
       margin: -2*$base-unit;
       margin-top: 10*$base-unit;
+      color: $tc-gray-70;
     }
   }
 }

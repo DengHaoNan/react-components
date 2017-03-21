@@ -58,7 +58,7 @@ class SortingSelectBar extends Component {
             onClick={() => this.setState({ optionsVisible: !this.state.optionsVisible })}
           >
             {selectedSortingOption}
-            <div className="down-arrow" />
+            <img src={require("./down-arrow.svg")} className="down-arrow" />
           </button>
         </div>
         {options}

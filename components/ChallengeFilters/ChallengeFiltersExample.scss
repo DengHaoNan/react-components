@@ -10,7 +10,7 @@ $challenge-radius-4: $corner-radius * 2;
 
 .challengeCardContainer{
   width: calc(100% - 370px);
-  @include xs {
+  @media (min-width: 320px) and (max-width: 950px){
     width: 100%;
   }
 }
@@ -50,7 +50,7 @@ $challenge-radius-4: $corner-radius * 2;
 
 .challenges-container.SRMs-container {
   width: 70%;
-  padding: 10px;
+  padding: 0;
   @include xs-to-sm {
     width: 100%;
   }

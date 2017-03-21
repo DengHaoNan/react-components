@@ -8,7 +8,250 @@
     border-bottom: 1px solid $tc-gray-30;
     padding: 0 $base-unit * 4;
   }
+  .switches{
+    display: inline-block;
+  }
+  .title.switchWithLabels{
+    float: right;
+    line-height: 40px;
+    font-family: Roboto;
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    padding-right: 4%;
+    display: none;
+    img{
+      margin-left: 5px;
+    }
+  }
+  .switches .switchesTitle,
+  .switches .closeSwitches{
+    display: none;
+  }
   .SwitchWithLabel {
     margin-right: 10px;
+  }
+  .switchWithLabels{
+    display: inline-block;
+  }
+  input#chooseSwitchLabel, .title{
+    font-family: Roboto-Regular;
+    font-size: 14px;
+    color: #737380;
+    display: none;
+  }
+  .closeFiltersPanel{
+    display: none;
+  }
+  .ChallengeSearchBar{
+    min-width: 205px;
+  }
+
+  //make responseive for mobile
+  @media (max-width: 1050px){
+    .switches .SwitchWithLabel{
+      margin-right: 0;
+    }
+    .ChallengeSearchBar{
+      margin-right: 0;
+    }
+  }
+
+  @media (max-width: 950px) and (min-width: 768px){
+    .FiltersSwitch{
+      margin-top: 10px;
+      float: right;
+    }
+    .filter-header{
+      padding: 0 0 0 15px;
+    }
+    #filters .filter#keywords .Select{
+      width: 100%;
+    }
+    .SwitchWithLabel{
+      display: block;
+    }
+    input#chooseSwitchLabel{
+      display: none;
+    }
+    .title.switchWithLabels{
+      float: right;
+      line-height: 40px;
+      font-family: Roboto;
+      font-weight: normal;
+      font-style: normal;
+      display: inline-block;
+      padding-right: 4%;
+      padding-top: 10px;
+    }
+    .switches{
+      display: none;
+    }
+    input#chooseSwitchLabel:checked~.switches{
+      display: inline-block;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      left: 0;
+      top: 0;
+      z-index: 3;
+    }
+    .switches .switchesTitle{
+      display: block;
+      color: $tc-gray-50;
+      font-size: 15px;
+      font-weight:500;
+      margin: 15px 0 0 15px;
+      padding-bottom: 27px;
+      border-bottom: 1px solid $tc-gray-10;
+    }
+    .switches .closeSwitches{
+      display: block;
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      top: 11px;
+      right: 15px;
+      z-index: 3;
+      font-size: 30px;
+      font-weight: normal;
+      color: #343434;
+      cursor: pointer;
+      line-height: 20px;
+    }
+    .switches .SwitchWithLabel{
+      height: 46px;
+      line-height: 46px;
+      margin: 0 15px;
+      font-size: 15px;
+      font-weight: 500;
+      color: tc-gray-80;
+      border-bottom: 1px solid $tc-gray-10;
+    }
+    .switches .SwitchWithLabel .Switch{
+      float: right;
+      margin-top: 12px;
+    }
+    .FiltersPanel{
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+    .closeFiltersPanel{
+      display: block;
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      top: 11px;
+      right: 15px;
+      z-index: 3;
+      font-size: 30px;
+      font-weight: normal;
+      color: #343434;
+      cursor: pointer;
+      line-height: 20px;
+    }
+  }
+
+  @include xs{
+    .filter-header{
+      padding: 0 0 0 15px;
+    }
+    #filters .filter#keywords .Select{
+      width: 100%;
+    }
+    .ChallengeSearchBar{
+      display: none;
+    }
+    .SwitchWithLabel{
+      display: block;
+    }
+    input#chooseSwitchLabel{
+      display: none;
+    }
+    .title.switchWithLabels{
+      float: right;
+      line-height: 40px;
+      font-family: Roboto;
+      font-weight: normal;
+      font-style: normal;
+      display: inline-block;
+      padding-right: 4%;
+    }
+    .switches{
+      display: none;
+    }
+    input#chooseSwitchLabel:checked~.switches{
+      display: inline-block;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      left: 0;
+      top: 0;
+      z-index: 3;
+    }
+    .switches .switchesTitle{
+      display: block;
+      color: $tc-gray-50;
+      font-size: 15px;
+      font-weight:500;
+      margin: 15px 0 0 15px;
+      padding-bottom: 27px;
+      border-bottom: 1px solid $tc-gray-10;
+    }
+    .switches .closeSwitches{
+      display: block;
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      top: 11px;
+      right: 15px;
+      z-index: 3;
+      font-size: 30px;
+      font-weight: normal;
+      color: #343434;
+      cursor: pointer;
+      line-height: 20px;
+    }
+    .switches .SwitchWithLabel{
+      height: 46px;
+      line-height: 46px;
+      margin: 0 15px;
+      font-size: 15px;
+      font-weight: 500;
+      color: tc-gray-80;
+      border-bottom: 1px solid $tc-gray-10;
+    }
+    .switches .SwitchWithLabel .Switch{
+      float: right;
+      margin-top: 12px;
+    }
+    .FiltersPanel{
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+    .closeFiltersPanel{
+      display: block;
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      top: 11px;
+      right: 15px;
+      z-index: 3;
+      font-size: 30px;
+      font-weight: normal;
+      color: #343434;
+      cursor: pointer;
+      line-height: 20px;
+    }
   }
 }

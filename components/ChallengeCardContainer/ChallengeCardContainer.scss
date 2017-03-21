@@ -7,6 +7,9 @@
   .category-challenges-container {
     background: $tc-gray-neutral-light;
     margin: 0;
+    margin-bottom: 23px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
   }
 
   .view-more {
@@ -17,7 +20,8 @@
     border-left: 0;
     border-right: 0;
     color: $tc-gray-50;
-    font-weight: 500;
+    font-size: 13px;
+    font-weight: 400;
     text-transform: none;
     border-radius: 0;
     outline: none;

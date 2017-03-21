@@ -7,11 +7,12 @@
   .ActiveFilterItem {
     cursor: pointer;
     margin: 0 -2*$base-unit;
-    padding: 0 5*$base-unit;
+    padding: 0 3*$base-unit 0 5*$base-unit;
     position: relative;
     input {
       background: transparent;
       border: none;
+      box-shadow: none;
       display: inline-block;
       height: 13px;
       margin-bottom: 0;
@@ -27,6 +28,11 @@
     }
     .right {
       float: right;
+      border-radius: 10px;
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      margin-top: 5px;
     }
   }
 
@@ -37,14 +43,20 @@
     }
     .icon-cross {
       display: inline;
+      background: transparent;
+      border-radius: 26px;
+      fill: $tc-dark-blue-70;
+      height: 10px;
+      width: 10px;
+      top: -4px;
+      right: -5px;
     }
     .right:hover {
+      background-color: $tc-dark-blue-70;
       .cross-tooltip {
         display: block;
       }
       .icon-cross {
-        background: $tc-dark-blue;
-        border-radius: 26px;
         fill: $tc-white;
       }
     }

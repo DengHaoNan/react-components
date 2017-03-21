@@ -49,6 +49,7 @@ $track-radius-4: $corner-radius * 2;
     line-height: $tco-line-hieght;
     padding: $base-unit - 1 0;
     margin-top: $base-unit - 4;
+    border-radius: 3px;
 
     &.design, &.generic {
       color: $tc-light_blue;

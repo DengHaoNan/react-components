@@ -21,6 +21,9 @@ $panel-radius-4: $corner-radius * 2;
   &.hidden {
     display: none;
   }
+  .filterTitle{
+    display: none;
+  }
   #buttons {
     border-left: 1px solid $tc-gray-20;
     float: right;
@@ -191,14 +194,44 @@ $panel-radius-4: $corner-radius * 2;
     height: 28px;
   }
   .Select-control {
-    height: $panel-space-30;
+    height: auto;
     border-radius: $corner-radius;
+    // display: block;
+    padding: 4px;
+    padding-left: 0;
+    .Select-multi-value-wrapper{
+      height: 20px;
+    }
+    .Select-multi-value-wrapper .Select-value-icon, 
+    .Select-multi-value-wrapper .Select-value-label{
+      margin: 0;
+      padding: 0;
+    }
+    .Select-input{
+      height: 20px;
+    }
+    .Select-input input{
+      padding: 0;
+      margin: 0;
+      height: 20px;
+    }
+    // .Select-clear-zone{
+    //   display: none;
+    // }
+    // .Select-arrow-zone{
+    //   display: block;
+    //   float: right;
+    // }
   }
   .Select-menu-outer {
     font-weight: 500;
     font-size: 13px;
   }
-  .Select-value {
+  .Select--multi .Select-value {
+    margin: 0;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    height: 20px;
     background: $tc-gray-neutral-dark;
     border: none;
     font-family: 'Roboto';
@@ -206,7 +239,6 @@ $panel-radius-4: $corner-radius * 2;
     font-size: 10px;
     color: $tc-gray-80;
     line-height: $panel-space-10 + 2;
-    margin-top: $base-unit - 1;
     border-radius: $corner-radius + 1;
     position: relative;
     .Select-value-label {
@@ -227,5 +259,105 @@ $panel-radius-4: $corner-radius * 2;
       background: $tc-light_blue;
       color: $tc-white;
     }
+  }
+}
+
+@include xs{
+
+  .filter .Select-control .Select-multi-value-wrapper{
+    height: 30px;
+  }
+  .filter .Select-placeholder{
+    line-height: 38px;
+  }
+  .filtersPanel{
+    padding: 15px;
+  }
+  .FiltersPanel .filterTitle{
+    display: inline-block;
+    margin-bottom: 31px;
+    font-size: 15px;
+    color: $tc-gray-50;
+    font-weight: 500;
+    height: 20px;
+    line-height: 20px;
+  }
+  .FiltersPanel label{
+    margin-bottom: 5px;
+  }
+  #filters{
+    display: block;
+  }
+  #keywords .Select{
+    width: 100%;
+  }
+  #filters .filter{
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  #filters .filter#track{
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  #filters .filter#dates{
+    display: block;
+    width: 100%;
+  }
+  #filters .filter label{
+    display: block;
+    text-align: left;
+  }
+  .Select{
+    display: block;
+    width: 100%;
+  }
+  #filters .filter-row{
+    display: block;
+    margin: 0;
+  }
+  .DateRangePicker{
+    width: 100%;
+  }
+  .DateRangePickerInput{
+    width: 100%;
+  }
+  .FiltersPanel #buttons{
+    position: static;
+    float: none;
+    display: block;
+    width: 212px;
+    padding: 0;
+    padding-top: 40px;
+    margin: auto;
+    border: none;
+    button{
+      display: inline-block;
+    }
+    button:first-child{
+      margin-right: 10px;
+    }
+  }
+}
+@media (max-width: 370px){
+  .filter-header{
+    font-size: 12px;
+  }
+  .filter-header .cards-type-col > a{
+    font-size: 12px;
+    margin-right: 10px;
+  }
+  .filter-header .FiltersSwitch.tc-outline-btn, 
+  .FiltersSwitch.tc-blue-btn,
+  .filter-header .challenge-filters .title.switchWithLabels{
+    font-size: 12px;
+  }
+  .filter-header .cards-type-col img.alphaBadge{
+    margin-right: 0px;
+  }
+  .challenge-filters .filter-header .title.switchWithLabels{
+    margin-right: 0;
+    padding-right: 0;
   }
 }

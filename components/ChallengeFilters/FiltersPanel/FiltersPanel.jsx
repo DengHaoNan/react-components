@@ -93,6 +93,7 @@ class FiltersPanel extends React.Component {
     if (this.props.hidden) className += ' hidden';
     return (
       <div className={className} ref={this.props.ref}>
+      <div className="filterTitle">FILTER</div>
         <div id="filters">
           <div className="filter" id="keywords">
             <label htmlFor="keyword-select">Keywords</label>

@@ -139,26 +139,43 @@ class ChallengeFilters extends React.Component {
             onSearch={str => this.onSearch(str)}
             placeholder="Search Challenges"
           />
-          <SwitchWithLabel
-            enabled={this.state.filter.tracks.has(DESIGN_TRACK)}
-            labelBefore="Design"
-            onSwitch={enable => this.setTracks(DESIGN_TRACK, enable)}
-          />
-          <SwitchWithLabel
-            enabled={this.state.filter.tracks.has(DEVELOP_TRACK)}
-            labelBefore="Development"
-            onSwitch={enable => this.setTracks(DEVELOP_TRACK, enable)}
-          />
-          <SwitchWithLabel
-            enabled={this.state.filter.tracks.has(DATA_SCIENCE_TRACK)}
-            labelBefore="Data Science"
-            onSwitch={enable => this.setTracks(DATA_SCIENCE_TRACK, enable)}
-          />
+          <input id='chooseSwitchLabel' type="checkbox"/>
+          <div className="switches">
+            <div className="switchesTitle">TRAKCS</div>
+            <label htmlFor='chooseSwitchLabel' className="closeSwitches">×</label>
+            <SwitchWithLabel
+              enabled={this.state.filter.tracks.has(DESIGN_TRACK)}
+              labelBefore="Design"
+              onSwitch={enable => this.setTracks(DESIGN_TRACK, enable)}
+            />
+            <SwitchWithLabel
+              enabled={this.state.filter.tracks.has(DEVELOP_TRACK)}
+              labelBefore="Development"
+              onSwitch={enable => this.setTracks(DEVELOP_TRACK, enable)}
+            />
+            <SwitchWithLabel
+              enabled={this.state.filter.tracks.has(DATA_SCIENCE_TRACK)}
+              labelBefore="Data Science"
+              onSwitch={enable => this.setTracks(DATA_SCIENCE_TRACK, enable)}
+            />
+          </div>
           <FiltersSwitch
             active={this.state.showFilters}
             filtersCount={this.state.filtersCount}
             onSwitch={active => this.setState({ showFilters: active })}
           />
+          <label htmlFor='chooseSwitchLabel' className="title switchWithLabels">
+              Track 
+              <img src={require('./down-arrow.svg')} alt=""/>
+          </label>
+          {
+              this.state.showFilters &&
+            <div className="closeFiltersPanel" onClick={
+              () => {this.setState((prevState) =>  ({ showFilters: !prevState.showFilters }))}
+            }>
+              ×
+            </div>
+          }
         </div>
         <FiltersPanel
           hidden={!this.state.showFilters}

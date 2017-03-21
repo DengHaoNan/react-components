@@ -7,9 +7,10 @@ $switch-space-100: $base-unit * 20;
 $switch-radius-2: $corner-radius;
 $switch-radius-4: $corner-radius * 2;
 
-.FiltersSwitch {
-  background: $tc-gray-30;
+.FiltersSwitch.tc-outline-btn {
+  background: $tc-gray-neutral-light;
   border: 1px solid $tc-gray-30;
+  border-radius: 2px;
   color: $tc-black;
   min-width: $switch-space-100 + 2;
   .FiltersIcon {
@@ -37,5 +38,24 @@ $switch-radius-4: $corner-radius * 2;
     color: $tc-white;
     font-weight: 400;
     text-align: center;
+  }
+  //make responsive for mobile
+  @include xs{
+    min-width: 82px;
+    margin: 0;
+    padding: 0;
+    padding-left: 15px;
+    height: 40px;
+    line-height: 40px;
+    border: none;
+    border-left: 1px solid $tc-gray-30;
+    float: right;
+    font-size: 14px;
+    color: #737380;
+    .FiltersIcon {
+    margin-right: $base-unit;
+    position: relative;
+    top: $base-unit - 2;
+  }
   }
 }

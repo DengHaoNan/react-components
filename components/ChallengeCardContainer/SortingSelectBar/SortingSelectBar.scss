@@ -15,34 +15,45 @@ $down-arrow-size: $base-unit * 2;
 
 .sortingBar {
   display: flex;
-  padding: $base-unit;
+  padding: 0;
   position: relative;
-
+  height: 40px;
   .title {
     padding: $base-unit * 2;
     margin: 0;
     border: none;
+    text-transform: none;
+    font-size: 13px;
+    color: $tc-gray-80;
+    font-weight: 500;
+    padding: 10px 0 10px 20px;
+    line-height: 20px;
   }
 
   .view-options-toggle-container, .view-options {
     position: absolute;
+    @include xs{
+      display: none;
+    }
   }
 
   .view-options-toggle-container {
-    right: $view-options-toggle-right-margin;
-    top: $base-unit;
-    display: flex;
-    align-items: center;
+    right: 20px;
   }
 
   .view-options-toggle-container-label {
+    font-size: 12px;
     font-weight: 300;
-    margin-right: $base-unit * 2;
+    color: $tc-gray-70;
+    margin-right: 3px;
+    padding: 13px 13px 13px 0;
+    line-height: 14px;
+    display: inline-block;
   }
 
   .view-options {
-    right: $view-options-toggle-right-margin;
-    top: $base-unit * 10;
+    top: 40px;
+    right: 10px;
     z-index: 1;
     background: $tc-white;
     border-radius: $base-unit;
@@ -50,6 +61,10 @@ $down-arrow-size: $base-unit * 2;
     box-shadow: 1px 5px 15px $tc-gray-20;
     display: flex;
     flex-direction: column;
+    text-transform: none;
+    .view-option{
+      text-transform: none;
+    }
   }
 
   .view-option {
@@ -67,19 +82,22 @@ $down-arrow-size: $base-unit * 2;
     @extend %sorting-select-button;
 
     color: $tc-gray-50;
-    border: 1px solid $tc-gray-50;
+    border: 1px solid $tc-gray-neutral-dark;
+    border-radius: 144px;
     font-size: 12px;
+    font-weight: 400;
+    color: #394146;
+    width: 99px;
+    height: 22px;
+    margin: 9px 20px 9px 0;
+    padding: 0;
     outline: none;
-    display: flex;
-    align-items: center;
+    text-transform: none;
   }
 
   .down-arrow {
-    width: 0;
-    height: 0;
-    border-left: $down-arrow-size solid transparent;
-    border-right: $down-arrow-size solid transparent;
-    border-top: $down-arrow-size solid $tc-gray-50;
-    margin-left: $base-unit;
+    margin-right: 8px; 
+    padding-top: 6px;
+    float: right;
   }
 }

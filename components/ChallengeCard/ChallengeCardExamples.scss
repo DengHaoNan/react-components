@@ -7,7 +7,7 @@ $challenge-radius-4: $corner-radius * 2;
 .tc-content-wrapper {
   display: flex;
   padding: $challenge-space-10;
-  @include xs {
+  @media (min-width: 320px) and (max-width: 950px) {
     display: block;
     padding: $base-unit * 0;
   }
